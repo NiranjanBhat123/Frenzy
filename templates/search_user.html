@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .search-container {
+      background: #fff;
+      margin: 10rem auto;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      max-width: 800px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .user-profiles {
+      margin-top: 2rem;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .table td {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+      background-color: #f9f9f9;
+    }
+
+    .table td a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .table td a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-container">
+    <h1>Search Results for "{{ query }}"</h1>
+    <div class="user-profiles">
+      <h2>User Profiles</h2>
+      <table class="table">
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td>
+              <a href="/profile/{{user.user.username}}">@{{user.user.username}}</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
