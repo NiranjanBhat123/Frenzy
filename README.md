@@ -18,4 +18,4 @@ explore other profiles
 add posts
 follow and like others posts
 search users
-loguot
+logout
